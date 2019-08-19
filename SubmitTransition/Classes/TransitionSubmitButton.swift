@@ -45,7 +45,7 @@ open class TKTransitionSubmitButton : UIButton, UIViewControllerTransitioningDel
         spiner.spinnerColor = spinnerColor
     }
 
-    open func startLoadingAnimation() {
+    @objc open func startLoadingAnimation() {
         self.cachedTitle = title(for: UIControlState())
         self.setTitle("", for: UIControlState())
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
@@ -87,7 +87,7 @@ open class TKTransitionSubmitButton : UIButton, UIViewControllerTransitioningDel
         }
     }
     
-    open func returnToOriginalState() {
+    @objc open func returnToOriginalState() {
         
         self.layer.removeAllAnimations()
         self.setTitle(self.cachedTitle, for: UIControlState())
